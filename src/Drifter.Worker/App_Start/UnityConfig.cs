@@ -1,4 +1,5 @@
-﻿using Drifter.Worker.DI;
+﻿using Drifter.Indexers;
+using Drifter.Worker.DI;
 using Microsoft.Practices.Unity;
 
 namespace Drifter.Worker
@@ -12,6 +13,8 @@ namespace Drifter.Worker
             // Log4net
             container.AddNewExtension<UnityBuildTrackingExtension>()
                      .AddNewExtension<UnityLogCreationExtension>();
+
+            container.RegisterType<IPostIndexer, WebPostIndexer>();
 
             return container;
         }
