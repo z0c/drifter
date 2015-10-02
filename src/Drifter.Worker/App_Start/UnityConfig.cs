@@ -1,4 +1,4 @@
-﻿
+﻿using Drifter.Worker.DI;
 using Microsoft.Practices.Unity;
 
 namespace Drifter.Worker
@@ -8,6 +8,10 @@ namespace Drifter.Worker
         internal static IUnityContainer RegisterComponents()
         {
             var container = new UnityContainer();
+
+            // Log4net
+            container.AddNewExtension<UnityBuildTrackingExtension>()
+                     .AddNewExtension<UnityLogCreationExtension>();
 
             return container;
         }
