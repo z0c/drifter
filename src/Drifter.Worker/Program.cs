@@ -10,7 +10,7 @@ namespace Drifter.Worker
     class Program
     {
 // ReSharper disable once UnusedParameter.Local
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             LoggerConfig.ConfigureLogger();
             var container = UnityConfig.RegisterComponents();
@@ -28,6 +28,7 @@ namespace Drifter.Worker
                 autoSubscriber.SubscribeAsync(Assembly.GetExecutingAssembly());
 
                 Console.ReadLine();
-            }         
+            }
+        }
     }
 }
