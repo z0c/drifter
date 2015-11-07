@@ -5,18 +5,18 @@ using System.Net;
 using log4net;
 using Newtonsoft.Json.Linq;
 
-namespace Drifter.Indexers
+namespace Drifter.Scrapers
 {
-    public class WebPostIndexer : IPostIndexer
+    public class WebPostScraper : IScrapePosts
     {
         private static ILog _logger;
 
-        public WebPostIndexer(ILog logger)
+        public WebPostScraper(ILog logger)
         {
             _logger = logger;
         }
 
-        public IEnumerable<Post> GetPosts(Uri uri)
+        public IEnumerable<Post> ScrapePosts(Uri uri)
         {
             var client = new WebClient();
             var response = client.DownloadString(uri);
@@ -28,8 +28,8 @@ namespace Drifter.Indexers
         }
     }
 
-    public interface IPostIndexer
+    public interface IScrapePosts
     {
-        IEnumerable<Post> GetPosts(Uri uri);
+        IEnumerable<Post> ScrapePosts(Uri uri);
     }
 }

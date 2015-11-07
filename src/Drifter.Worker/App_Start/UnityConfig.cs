@@ -1,4 +1,4 @@
-﻿using Drifter.Indexers;
+﻿using Drifter.Scrapers;
 using Drifter.Worker.DI;
 using Microsoft.Practices.Unity;
 
@@ -14,7 +14,7 @@ namespace Drifter.Worker
             container.AddNewExtension<UnityBuildTrackingExtension>()
                      .AddNewExtension<UnityLogCreationExtension>();
 
-            container.RegisterType<IPostIndexer, WebPostIndexer>();
+            container.RegisterType<IScrapePosts, WebPostScraper>();
 
             return container;
         }

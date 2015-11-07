@@ -49,7 +49,7 @@
   <ItemGroup>
     <Compile Include="JsonConverters\UnixTimestampConverter.cs" />
     <Compile Include="Post.cs" />
-    <Compile Include="Indexers\WebPostIndexer.cs" />
+    <Compile Include="Scrapers\WebPostScraper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
