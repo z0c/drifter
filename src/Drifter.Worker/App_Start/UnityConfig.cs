@@ -1,4 +1,5 @@
 ﻿using Drifter.Scrapers;
+using Drifter.Utilities;
 using Drifter.Worker.DI;
 using Microsoft.Practices.Unity;
 
@@ -13,8 +14,9 @@ namespace Drifter.Worker
             // Log4net
             container.AddNewExtension<UnityBuildTrackingExtension>()
                      .AddNewExtension<UnityLogCreationExtension>();
-
+            
             container.RegisterType<IScrapePosts, WebPostScraper>();
+            container.RegisterType<IWebClient, WebClient>();
 
             return container;
         }

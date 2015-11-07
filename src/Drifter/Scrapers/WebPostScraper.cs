@@ -1,18 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using log4net;
+using Drifter.Utilities;
 using Newtonsoft.Json.Linq;
 
 namespace Drifter.Scrapers
 {
     public class WebPostScraper : IScrapePosts
     {
+        private readonly IWebClient _webClient;
+
+        public WebPostScraper(IWebClient webClient)
+        {
+            _webClient = webClient;
+        }
+
         public IEnumerable<Post> ScrapePosts(Uri uri)
         {
-            var client = new WebClient();
-            var response = client.DownloadString(uri);
+            var response = _webClient.DownloadString(uri);
             var json = JObject.Parse(response);
 
             return json["data"]["children"]

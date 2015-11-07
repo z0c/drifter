@@ -51,6 +51,7 @@
     <Compile Include="Post.cs" />
     <Compile Include="Scrapers\WebPostScraper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\WebClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
