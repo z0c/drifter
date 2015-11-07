@@ -24,7 +24,8 @@ namespace Drifter.Worker
                 var posts = _postScraper.ScrapePosts(new Uri(message.Uri));
                 foreach (var post in posts)
                     _logger.Info(post.Url);
-            });
+            })
+            .ContinueWith(t => _logger.Error(t.Exception), TaskContinuationOptions.OnlyOnFaulted);
         }
     }
 }
