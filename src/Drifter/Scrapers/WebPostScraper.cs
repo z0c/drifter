@@ -9,13 +9,6 @@ namespace Drifter.Scrapers
 {
     public class WebPostScraper : IScrapePosts
     {
-        private static ILog _logger;
-
-        public WebPostScraper(ILog logger)
-        {
-            _logger = logger;
-        }
-
         public IEnumerable<Post> ScrapePosts(Uri uri)
         {
             var client = new WebClient();
