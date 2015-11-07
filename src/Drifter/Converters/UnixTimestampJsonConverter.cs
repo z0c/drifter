@@ -2,9 +2,9 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace Drifter.JsonConverters
+namespace Drifter.Converters
 {
-    public class UnixTimestampConverter : JsonConverter
+    public class UnixTimestampJsonConverter : JsonConverter
     {
         public override bool CanConvert(Type objectType)
         {

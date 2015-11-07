@@ -1,5 +1,5 @@
 ﻿using System;
-using Drifter.JsonConverters;
+using Drifter.Converters;
 using Newtonsoft.Json;
 
 namespace Drifter
@@ -17,7 +17,7 @@ namespace Drifter
         public int Score { get; set; }
 
         [JsonProperty("created")]
-        [JsonConverter(typeof(UnixTimestampConverter))]
+        [JsonConverter(typeof(UnixTimestampJsonConverter))]
         public DateTime CreatedDateTime { get; set; }
         
     }
